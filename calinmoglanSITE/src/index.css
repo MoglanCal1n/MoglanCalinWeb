@@ -138,3 +138,10 @@ html, body, #root {
   height: calc(100% - 25px);
   overflow: auto;
 }
+
+.window-body {
+  display: flex;         
+  flex-direction: column; 
+  overflow: hidden;
+  height: 100%;
+}
