@@ -8,6 +8,9 @@ import volunteeringPic from '../assets/saveTheChildrenHeart.jpg';
 import concertPic from '../assets/concert.jpeg';
 import friendsPic from '../assets/calinPlusFrens.jpeg';
 
+import guitarVideo1 from '../assets/chitara.mp4'; 
+import guitarVideo2 from '../assets/chitara2.mp4';
+
 const About = () => {
   const photoPlaceholderStyle = {
     width: '100%',
@@ -28,6 +31,14 @@ const About = () => {
     width: '100%',
     height: '100%',
     objectFit: 'cover', 
+    display: 'block'
+  };
+
+  const videoStyle = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain', 
+    backgroundColor: '#000',
     display: 'block'
   };
 
@@ -99,10 +110,33 @@ const About = () => {
       <p style={{ lineHeight: '1.5', marginBottom: '15px' }}>
         Music is a huge part of my life. I play the guitar and love getting lost in the rhythm. 
       </p>
+
       <div style={photoPlaceholderStyle}>
         <img src={concertPic} alt="Concert Vibes" style={imageStyle} />
       </div>
       <p style={captionStyle}>Alternosfera concert</p>
+
+      <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '5px', color: '#444' }}>
+        Here are some clips of me playing:
+      </p>
+      
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '5px' }}>
+        <div style={{ ...photoPlaceholderStyle, height: '200px', flex: 1, backgroundColor: '#000' }}>
+          <video 
+            src={guitarVideo1} 
+            controls 
+            style={videoStyle}
+          />
+        </div>
+        <div style={{ ...photoPlaceholderStyle, height: '200px', flex: 1, backgroundColor: '#000' }}>
+          <video 
+            src={guitarVideo2} 
+            controls 
+            style={videoStyle}
+          />
+        </div>
+      </div>
+      <p style={captionStyle}>Some doodles</p>
 
       <h4 style={sectionTitleStyle}>Social Life</h4>
       <p style={{ lineHeight: '1.5', marginBottom: '15px' }}>
