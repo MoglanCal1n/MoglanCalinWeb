@@ -1,9 +1,7 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import './index.css'; 
 import XPWindow from './components/XPWindow'; 
 
-// Importăm paginile
 import Launcher from './pages/Launcher';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -94,7 +92,6 @@ function App() {
     return { x: launcherPos.x + 50, y: launcherPos.y - 50 };
   };
 
-  // Randăm conținutul din module
   const renderWindowContent = (key) => {
     switch(key) {
       case 'launcher': 
@@ -131,11 +128,10 @@ function App() {
             isActive={activeIndices[key] === topIndex}
             onFocus={() => bringToFront(key)}
             
-            // AICI ESTE FIX-UL PENTRU SCROLL:
-            // Adăugăm o înălțime fixă pentru toate ferestrele, mai puțin Launcher-ul
+
             style={{ 
               width: key === 'launcher' ? '300px' : '400px', 
-              height: key === 'launcher' ? 'auto' : '450px' // Forțează înălțimea ca să apară scroll-ul
+              height: key === 'launcher' ? 'auto' : '450px' 
             }}
             
             defaultPosition={getWindowPosition(key)}
